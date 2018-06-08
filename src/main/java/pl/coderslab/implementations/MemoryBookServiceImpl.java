@@ -1,4 +1,4 @@
-package pl.coderslab.services;
+package pl.coderslab.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,13 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import pl.coderslab.models.Book;
+import pl.coderslab.services.BookService;
 
 @Component
-public class MemoryBookService implements BookService{
+public class MemoryBookServiceImpl implements BookService {
 	private List<Book> bookList;
 
-	public MemoryBookService() {
+	public MemoryBookServiceImpl() {
 		bookList = new ArrayList<>();
 		bookList.add(new Book(1L, "9788324631766", "Thinking in Java", "Bruce Eckel", "Helion", "programming"));
 		bookList.add(new Book(2L, "9788324627738", "Rusz glowa,	Java.", "Sierra	Kathy, Bates Bert", "Helion", "programming"));
