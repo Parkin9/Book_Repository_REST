@@ -1,47 +1,47 @@
 document.addEventListener("DOMContentLoaded", function(){
     
     
-    $("#btn1").one('click', function(){
+    $('#btn1').one('click', function(){
         
         $.ajax({
             url: "http://localhost:8080/books/1",
             success: function(json){
                 //console.log(json.title);
-				$("#date1-1").append(json.title);
+				$('#date1-1').append(json.title);
         }});
     });
 	
-	$("#btn2").one('click', function(){
+	$('#btn2').one('click', function(){
         
         $.ajax({
             url: "http://localhost:8080/books/2",
             success: function(json){
                 //console.log(json.title);
-				$("#date2-1").append(json.title);
+				$('#date2-1').append(json.title);
         }});
     });
 	
-	$("#btn3").one('click', function(){
+	$('#btn3').one('click', function(){
         
         $.ajax({
             url: "http://localhost:8080/books/3",
             success: function(json){
                 //console.log(json.title);
-				$("#date3-1").append(json.title);
+				$('#date3-1').append(json.title);
         	}
 		});
     });
 //////////////////////////////////////////////////////////////
 	
-	$("#search").click(function(e){
+	$('#search').click(function(e){
 		e.preventDefault();
 		var id = $("#idVal").val();
         
 	  $.ajax({
-		  url: "http://127.0.0.1:8080/books/" + id,
+		  url: "http://localhost:8080/books/" + id,
 		  success: function(result) {
 			  console.log(result);
-			  $("#divForm").append(result.title);
+			  $('#divForm').append(result.title);
 		  }
 	  });
 	});
@@ -75,20 +75,20 @@ document.addEventListener("DOMContentLoaded", function(){
 	});
 //////////////////////////////////////////////////////////////////
 	
-	$("#add").click(function(e){
+	$('#add').click(function(e){
 		e.preventDefault();
-		var id = $("#idBook").val();
-		var isbn = $("#isbnBook").val();
-		var title = $("#titleBook").val();
-		var author = $("#authorBook").val();
-		var publish = $("#publishBook").val();
-		var type = $("#typeBook").val();
+		var id = $('#idBook').val();
+		var isbn = $('#isbnBook').val();
+		var title = $('#titleBook').val();
+		var author = $('#authorBook').val();
+		var publish = $('#publishBook').val();
+		var type = $('#typeBook').val();
         
 	  $.ajax({
-		  url: "http://127.0.0.1:8080/books/",
+		  url: "http://localhost:8080/books/",
 		  success: function(result) {
 			  console.log(result);
-			  $("#divForm").append(result.title);
+			  $('#divForm').append(result.title);
 		  }
 	  });
 	});
