@@ -16,16 +16,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/ **")
-				.allowedMethods("GET", "POST", "PUT", "DELETE")
-				.allowedOrigins("http://localhost");
+		registry.addMapping("/**")
+				.allowedMethods("GET", "POST", "PUT", "DELETE");
+				//.allowedOrigins("http://localhost");
 	}
 
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//        viewResolver.setPrefix("/WEB-INF/views/");
+//        viewResolver.setSuffix(".html");
+//        return viewResolver;
+//    }
 }
