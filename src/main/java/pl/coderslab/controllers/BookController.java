@@ -32,14 +32,14 @@ public class BookController {
 	}
 	
 	@PostMapping("/books")
-	public String addBook(@RequestBody Book newBook) {
-		bookService.addNew(newBook);
+	public String addBook(@RequestBody Book book) {
+		bookService.addNew(book);
 		return "Book has been added.";
 	}
 	
 	@PutMapping("/books/{id}")
-	public String updateBook(@PathVariable long id, @RequestBody Book newBook) {
-		if(bookService.update(id, newBook)) {
+	public String updateBook(@PathVariable long id, @RequestBody Book book) {
+		if(bookService.update(id, book)) {
 			return "Book (ID: " + id + ") has been updated.";
 		} else {
 			return "Book (ID: " + id + ") doesn't exist.";
