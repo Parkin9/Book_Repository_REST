@@ -21,14 +21,12 @@ public class BookController {
 
 	@GetMapping("/books")
 	public List<Book> showBookList() {
-		List<Book> bookList = bookService.getList();
-		return bookList;
+		return bookService.getList();
 	}
 	
 	@GetMapping("/books/{id}")
 	public Book showBookById(@PathVariable long id) {
-		Book book = bookService.getById(id);
-		return book;
+		return bookService.getById(id);
 	}
 	
 	@PostMapping("/books")
